@@ -28,7 +28,6 @@ public class BirdSelectionButton : MonoBehaviour
         if (!_isPressed)
         {
             _canBeSelected = !gameSelectionData.IsFilled();
-            Debug.Log(_canBeSelected);
             if (_canBeSelected)
             {
                 gameSelectionData.AddSelectedBird(_index);

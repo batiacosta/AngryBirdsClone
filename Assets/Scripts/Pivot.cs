@@ -2,12 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.EnhancedTouch;
-using UnityEngine.Serialization;
-using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 public class Pivot : MonoBehaviour
 {
