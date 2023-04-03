@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7619194807433796736, guid: aeb9ad199dc3a47e88a23254dc9a11a8, type: 3}
       propertyPath: m_Name
-      value: BaseBird
+      value: RedBird
       objectReference: {fileID: 0}
     - target: {fileID: 7619194807433796741, guid: aeb9ad199dc3a47e88a23254dc9a11a8, type: 3}
       propertyPath: m_RootOrder
@@ -55,5 +55,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7619194807433796742, guid: aeb9ad199dc3a47e88a23254dc9a11a8, type: 3}
+      propertyPath: birdSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 4285edf571e4a4b8a9ac348fc63f881e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeb9ad199dc3a47e88a23254dc9a11a8, type: 3}

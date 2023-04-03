@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ScriptableObjects;
 using UnityEngine;
 
 public class Bird : MonoBehaviour
@@ -25,10 +26,14 @@ public class Bird : MonoBehaviour
         }
     }
 
-    private BirdState _state;
+    [SerializeField] private SpriteRenderer birdSprite;
+    [SerializeField] private BirdSO birdSO;
+
+    private BirdState _state = BirdState.Idle;
     private Rigidbody2D _rigidbody2D;
     private void OnEnable()
     {
+        birdSprite.sprite = birdSO.birdImage;
         _rigidbody2D = GetComponent<Rigidbody2D>();
         State = BirdState.Idle;
     }
@@ -37,7 +42,7 @@ public class Bird : MonoBehaviour
     {
         switch (State)
         {
-            case BirdState.Idle: 
+            case BirdState.Idle:
                 _rigidbody2D.isKinematic = true;
                 SetIdle();
                 break;

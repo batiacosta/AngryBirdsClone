@@ -10,6 +10,8 @@ namespace ScriptableObjects
     public class SelectionDataSO : ScriptableObject
     {
         private List<int> _selectedBirdIndexes;
+        
+        
         public EventHandler<bool> OnSelectionChanged;
 
         private bool _isSelectionFilled = false;
@@ -50,6 +52,14 @@ namespace ScriptableObjects
         {
             _isSelectionFilled = _selectedBirdIndexes.Count == MaxAllowedBirds;
             return _isSelectionFilled;
+        }
+
+        public List<int> GetIndexesList()
+        {
+            return _selectedBirdIndexes;
+        }
+        public void ResetSelectedCards(){
+            _selectedBirdIndexes.Clear();
         }
     }
 }

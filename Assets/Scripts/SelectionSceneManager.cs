@@ -13,16 +13,11 @@ public class SelectionSceneManager : MonoBehaviour
     {
         gameSelectionData.OnSelectionChanged += UpdatePlayButton;
         playButton.gameObject.SetActive(false);
+        gameSelectionData.ResetSelectedCards();
     }
 
     private void UpdatePlayButton(object sender, bool isFilled)
     {
         playButton.gameObject.SetActive(isFilled);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
