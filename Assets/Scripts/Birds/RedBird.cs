@@ -14,7 +14,6 @@ namespace Birds
 
         public override void SetActivated()
         {
-            Debug.Log("Red bad boy is now activated");
             BirdRigidbody2D.AddForce(transform.right * Forcefactor, ForceMode2D.Impulse);
             State = BirdState.Hit;
         }
