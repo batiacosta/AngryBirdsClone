@@ -11,7 +11,6 @@ namespace Birds
         [SerializeField] private float forceFactor;
         public override void SetActivated()
         {
-            Debug.Log("Se activó esta vaina");
             var explosionCircleObjects = Physics2D.OverlapCircleAll(transform.position, explosionRadious);
             foreach (Collider2D afectedObject in explosionCircleObjects)
             {
@@ -21,7 +20,6 @@ namespace Birds
                     Vector2 distance = afectedObject.transform.position - transform.position;
                     if (distance.magnitude > 0)
                     {
-                        Debug.Log("Entró a volar algo");
                         float explosionForceMagnitud = forceFactor / distance.magnitude;
                         afectedObjectRigidbody2D.AddForce(distance.normalized * explosionForceMagnitud);
                     }
