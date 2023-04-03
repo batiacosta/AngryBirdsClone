@@ -59,5 +59,32 @@ PrefabInstance:
       propertyPath: birdSO
       value: 
       objectReference: {fileID: 11400000, guid: 4c1c3e1d21619450ba5ccc9ea41bcfd4, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7619194807433796742, guid: aeb9ad199dc3a47e88a23254dc9a11a8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aeb9ad199dc3a47e88a23254dc9a11a8, type: 3}
+--- !u!212 &1831944368472172722 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3033034415998950081, guid: aeb9ad199dc3a47e88a23254dc9a11a8, type: 3}
+  m_PrefabInstance: {fileID: 3709803948860338803}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6541212678088486643 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7619194807433796736, guid: aeb9ad199dc3a47e88a23254dc9a11a8, type: 3}
+  m_PrefabInstance: {fileID: 3709803948860338803}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6089805434333138699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6541212678088486643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d546019c874d7e98a865570c4eb80c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  birdSprite: {fileID: 1831944368472172722}
+  birdSO: {fileID: 11400000, guid: 4c1c3e1d21619450ba5ccc9ea41bcfd4, type: 2}
+  explosionRadious: 2
+  forceFactor: 10000

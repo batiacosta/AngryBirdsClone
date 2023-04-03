@@ -64,7 +64,6 @@ public class Bird : MonoBehaviour
             State = BirdState.Activated;
             IsAbilityActivated = true;
         }
-        
     }
 
     private void SetBirdState()
