@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class InGameCard : MonoBehaviour
 {
-    private BirdSO _birdSO;
+    private CharacterSO _birdSo;
     [SerializeField] private InGameDataSO inGameDataSO;
     [SerializeField] private TextMeshProUGUI quantityTMP;
 
@@ -17,14 +17,14 @@ public class InGameCard : MonoBehaviour
 
     public void SelectBird()
     {
-        inGameDataSO.SetNewBird(_birdSO);
+        inGameDataSO.SetNewBird(_birdSo);
     }
 
-    public void SetInGameCard(BirdSO birdSO)
+    public void SetInGameCard(CharacterSO characterSo)
     {
-        _birdSO = birdSO;
+        _birdSo = characterSo;
         _cardImage = GetComponent<Button>().image;
-        _cardImage.sprite = birdSO.birdUIReference;
+        _cardImage.sprite = characterSo.characterUIReference;
     }
 
     public void UpdateQuantity(int newNumber)

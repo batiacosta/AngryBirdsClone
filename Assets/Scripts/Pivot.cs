@@ -22,19 +22,19 @@ public class Pivot : MonoBehaviour
     {
         _mainCamera = Camera.main;
         inGameDataSO.OnCurrentBirdSOChanged += SetNewBirdFromEvent;
-        if (inGameDataSO.CurrentBirdSO != null)
+        if (inGameDataSO.CurrentCharacterSo != null)
         {
-            SetNewCurrentBird(inGameDataSO.CurrentBirdSO);
+            SetNewCurrentBird(inGameDataSO.CurrentCharacterSo);
         }
     }
 
-    private void SetNewBirdFromEvent(object sender, BirdSO e)
+    private void SetNewBirdFromEvent(object sender, CharacterSO e)
     {
         Debug.Log("Se invocó desde el botón e inGameData");
         SetNewCurrentBird(e);
     }
 
-    private void SetNewCurrentBird(BirdSO birdSO)
+    private void SetNewCurrentBird(CharacterSO birdSo)
     {
         _isDragging = false;
         if (placeToSpawn.childCount != 0)
@@ -44,7 +44,7 @@ public class Pivot : MonoBehaviour
                 GameObject.Destroy(child.gameObject);
             }
         }
-        var birdPrefab = Instantiate(birdSO.prefab, placeToSpawn, true);
+        var birdPrefab = Instantiate(birdSo.prefab, placeToSpawn, true);
         birdPrefab.SetPositionAndRotation(placeToSpawn.transform.position, Quaternion.identity );
         birdPrefab.transform.localScale *= 0.05f;
         currentBird = birdPrefab.GetComponent<Bird>();

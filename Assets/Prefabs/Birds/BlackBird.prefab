@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdSprite: {fileID: 1831944368472172722}
-  birdSO: {fileID: 11400000, guid: 4c1c3e1d21619450ba5ccc9ea41bcfd4, type: 2}
-  delayForDiying: 3
+  birdSo: {fileID: 11400000, guid: 4c1c3e1d21619450ba5ccc9ea41bcfd4, type: 2}
+  delayForDiying: 1
   explosionRadious: 2
   forceFactor: 10000

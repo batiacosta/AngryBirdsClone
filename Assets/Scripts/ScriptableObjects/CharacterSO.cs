@@ -1,17 +1,19 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 namespace ScriptableObjects
 {
     [CreateAssetMenu()]
-    public class BirdSO : ScriptableObject
+    public class CharacterSO : ScriptableObject
     {
         public int index;
-        public Sprite birdImage;
-        public Sprite birdUIReference;
+        public Sprite characterImage;
+        public Sprite characterUIReference;
         public Transform prefab;
         public String type;
+        public InGameDataSO InGameDataSo;
     }
 }

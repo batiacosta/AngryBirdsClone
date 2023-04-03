@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91e11e11b74247f79f89c4d400fdfa64, type: 3}
-  m_Name: InGameDataSO
+  m_Script: {fileID: 11500000, guid: 3caea35e0e18480c901e02f01131498a, type: 3}
+  m_Name: EnemiesLibrarySO
   m_EditorClassIdentifier: 
-  characterSoLibrarySo: {fileID: 11400000, guid: fac2411d852a9405585b489068023b18, type: 2}
-  selectionDataSO: {fileID: 11400000, guid: 0e225a12bb49e4aab8d65b0c0ad56fcd, type: 2}
+  BirdsData:
+  - characterSo: {fileID: 11400000, guid: 7db127f10330243bfbd29669cdb52324, type: 2}
+    Quantity: 0
