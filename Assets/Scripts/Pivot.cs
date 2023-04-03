@@ -1,18 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ScriptableObjects;
 using UnityEngine;
-using Unity.Mathematics;
-using Unity.VisualScripting;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.EnhancedTouch;
-using UnityEngine.Serialization;
-using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 public class Pivot : MonoBehaviour
 {
     [SerializeField] private Bird currentBird;
     [SerializeField] private float factor;
+    [SerializeField] private InGameDataSO inGameDataSO;
+    [SerializeField] private Transform placeToSpawn;
     
     private Rigidbody2D _birdRigidBody2D;
     private Camera _mainCamera;
@@ -22,7 +21,34 @@ public class Pivot : MonoBehaviour
     private void Start()
     {
         _mainCamera = Camera.main;
-        SetNewBird();
+        inGameDataSO.OnCurrentBirdSOChanged += SetNewBirdFromEvent;
+        if (inGameDataSO.CurrentBirdSO != null)
+        {
+            SetNewCurrentBird(inGameDataSO.CurrentBirdSO);
+        }
+    }
+
+    private void SetNewBirdFromEvent(object sender, BirdSO e)
+    {
+        Debug.Log("Se invocó desde el botón e inGameData");
+        SetNewCurrentBird(e);
+    }
+
+    private void SetNewCurrentBird(BirdSO birdSO)
+    {
+        _isDragging = false;
+        if (placeToSpawn.childCount != 0)
+        {
+            foreach (Transform child in placeToSpawn.transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+        }
+        var birdPrefab = Instantiate(birdSO.prefab, placeToSpawn, true);
+        birdPrefab.SetPositionAndRotation(placeToSpawn.transform.position, Quaternion.identity );
+        currentBird = birdPrefab.GetComponent<Bird>();
+        _birdRigidBody2D = currentBird.GetComponent<Rigidbody2D>();
+        
     }
 
 
@@ -39,7 +65,6 @@ public class Pivot : MonoBehaviour
             _isDragging = false;
             return;
         }
-        _isDragging = true;
         if (currentBird.State != Bird.BirdState.Released)
         {
             SetBirdPositionWhilePressed();
@@ -48,16 +73,16 @@ public class Pivot : MonoBehaviour
 
     private void SetBirdPositionWhilePressed()
     {
-        Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
-        Vector3 worldFingerPosition = _mainCamera.ScreenToWorldPoint(touchPosition);
-        currentBird.State = Bird.BirdState.Pressed;
-        _birdRigidBody2D.position = worldFingerPosition;
-    }
+        
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            _isDragging = true;
+            Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+            Vector3 worldFingerPosition = _mainCamera.ScreenToWorldPoint(touchPosition);
+            currentBird.State = Bird.BirdState.Pressed;
+            _birdRigidBody2D.position = worldFingerPosition;
+        }
 
-    private void SetNewBird()
-    {
-        _isDragging = false;
-        _birdRigidBody2D = currentBird.GetComponent<Rigidbody2D>();
     }
 
     private void ShootBird()
@@ -74,5 +99,6 @@ public class Pivot : MonoBehaviour
         currentBird.State = Bird.BirdState.Released;
         currentBird = null;
     }
+
     
 }

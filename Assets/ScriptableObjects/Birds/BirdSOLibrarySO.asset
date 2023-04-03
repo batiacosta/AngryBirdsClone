@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caea35e0e18480c901e02f01131498a, type: 3}
+  m_Name: BirdSOLibrarySO
+  m_EditorClassIdentifier: 
+  BirdsData:
+  - BirdSO: {fileID: 11400000, guid: 4285edf571e4a4b8a9ac348fc63f881e, type: 2}
+    Quantity: 3
+  - BirdSO: {fileID: 11400000, guid: 4c1c3e1d21619450ba5ccc9ea41bcfd4, type: 2}
+    Quantity: 2
+  - BirdSO: {fileID: 11400000, guid: 6b6c401bb0e3b4c7386554ce1e75f549, type: 2}
+    Quantity: 4
