@@ -46,6 +46,7 @@ public class Pivot : MonoBehaviour
         }
         var birdPrefab = Instantiate(birdSO.prefab, placeToSpawn, true);
         birdPrefab.SetPositionAndRotation(placeToSpawn.transform.position, Quaternion.identity );
+        birdPrefab.transform.localScale *= 0.05f;
         currentBird = birdPrefab.GetComponent<Bird>();
         _birdRigidBody2D = currentBird.GetComponent<Rigidbody2D>();
         
