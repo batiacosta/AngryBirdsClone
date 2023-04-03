@@ -59,5 +59,30 @@ PrefabInstance:
       propertyPath: birdSO
       value: 
       objectReference: {fileID: 11400000, guid: 4285edf571e4a4b8a9ac348fc63f881e, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7619194807433796742, guid: aeb9ad199dc3a47e88a23254dc9a11a8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: aeb9ad199dc3a47e88a23254dc9a11a8, type: 3}
+--- !u!1 &1165044769080193298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7619194807433796736, guid: aeb9ad199dc3a47e88a23254dc9a11a8, type: 3}
+  m_PrefabInstance: {fileID: 8761686298439462290}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1662498141336749610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165044769080193298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c374fd5deb14a40ad14c64022160993, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  birdSprite: {fileID: 6016883865044580179}
+  birdSO: {fileID: 11400000, guid: 4285edf571e4a4b8a9ac348fc63f881e, type: 2}
+--- !u!212 &6016883865044580179 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3033034415998950081, guid: aeb9ad199dc3a47e88a23254dc9a11a8, type: 3}
+  m_PrefabInstance: {fileID: 8761686298439462290}
+  m_PrefabAsset: {fileID: 0}

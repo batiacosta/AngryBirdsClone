@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class Bird : MonoBehaviour
 {
@@ -30,28 +33,54 @@ public class Bird : MonoBehaviour
     [SerializeField] private BirdSO birdSO;
 
     private BirdState _state = BirdState.Idle;
-    private Rigidbody2D _rigidbody2D;
+    public Rigidbody2D BirdRigidbody2D { get; private set; } 
+    public bool IsAbilityActivated { get; private set; } 
     private void OnEnable()
     {
         birdSprite.sprite = birdSO.birdImage;
-        _rigidbody2D = GetComponent<Rigidbody2D>();
+        BirdRigidbody2D = GetComponent<Rigidbody2D>();
         State = BirdState.Idle;
+        IsAbilityActivated = false;
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        State = BirdState.Hit;
+        IsAbilityActivated = true;
+    }
+
+    private void Update()
+    {
+        if (_state == BirdState.Released)
+        {
+            CheckForPowerUp();
+        }
+    }
+
+    private void CheckForPowerUp()
+    {
+        if (Touchscreen.current.primaryTouch.press.isPressed && !IsAbilityActivated)
+        {
+            State = BirdState.Activated;
+            IsAbilityActivated = true;
+        }
+        
+    }
+
     private void SetBirdState()
     {
         switch (State)
         {
             case BirdState.Idle:
-                _rigidbody2D.isKinematic = true;
+                BirdRigidbody2D.isKinematic = true;
                 SetIdle();
                 break;
             case BirdState.Pressed:
-                _rigidbody2D.isKinematic = true;
+                BirdRigidbody2D.isKinematic = true;
                 SetPressed();
                     break;
             case BirdState.Shooting:
-                _rigidbody2D.isKinematic = false;
+                BirdRigidbody2D.isKinematic = false;
                 SetShooting();
                 break;
             case BirdState.Released:
@@ -67,7 +96,7 @@ public class Bird : MonoBehaviour
         }
     }
 
-    private void SetHit()
+    public virtual void SetHit()
     {
         //  Play animations when bird hits something
         //  Play animations when bird hits something
