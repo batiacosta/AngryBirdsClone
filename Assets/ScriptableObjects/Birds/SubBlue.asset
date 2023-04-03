@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14c7d00282474b66b2b29093ebeffd5, type: 3}
+  m_Name: SubBlue
+  m_EditorClassIdentifier: 
+  index: 2
+  birdImage: {fileID: 21300000, guid: d0880c5bc75844779bac435c7d3a0483, type: 3}
+  birdUIReference: {fileID: 1641098938, guid: 4953520b51af44f0b99532bc491ddec2, type: 3}
+  prefab: {fileID: 6930695516054917, guid: d9c1dfb49baa04c9884e7080e4271d63, type: 3}
+  type: Blue

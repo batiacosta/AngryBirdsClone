@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using ScriptableObjects;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -31,6 +32,7 @@ public class Bird : MonoBehaviour
 
     [SerializeField] private SpriteRenderer birdSprite;
     [SerializeField] private BirdSO birdSO;
+    [SerializeField] private float delayForDiying;
 
     private BirdState _state = BirdState.Idle;
     public Rigidbody2D BirdRigidbody2D { get; private set; } 
@@ -95,10 +97,18 @@ public class Bird : MonoBehaviour
         }
     }
 
+
     public virtual void SetHit()
     {
         //  Play animations when bird hits something
         //  Play animations when bird hits something
+        StartCoroutine(DelayForDestruction());
+    }
+
+    private IEnumerator DelayForDestruction()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 
     public virtual void SetActivated()
