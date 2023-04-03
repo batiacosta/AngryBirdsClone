@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: BlackBird
   m_EditorClassIdentifier: 
   index: 1
-  birdImage: {fileID: 21300000, guid: cfea536edb78c43fdac9c33538996c89, type: 3}
-  birdUIReference: {fileID: -190596791, guid: 4953520b51af44f0b99532bc491ddec2, type: 3}
+  characterImage: {fileID: 21300000, guid: cfea536edb78c43fdac9c33538996c89, type: 3}
+  characterUIReference: {fileID: -190596791, guid: 4953520b51af44f0b99532bc491ddec2, type: 3}
   prefab: {fileID: 6541212678088486646, guid: d60e09928ebe24cce8facf4f7aff01c6, type: 3}
   type: Black
+  InGameDataSo: {fileID: 11400000, guid: 265e3f1d1f5944a7eb18ca72f2e99d8b, type: 2}

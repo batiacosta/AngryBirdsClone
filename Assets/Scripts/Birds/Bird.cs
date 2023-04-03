@@ -1,12 +1,9 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
 using ScriptableObjects;
-using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
+
 
 public class Bird : MonoBehaviour
 {
@@ -31,7 +28,7 @@ public class Bird : MonoBehaviour
     }
 
     [SerializeField] private SpriteRenderer birdSprite;
-    [SerializeField] private BirdSO birdSO;
+    [SerializeField] private CharacterSO birdSo;
     [SerializeField] private float delayForDiying;
 
     private BirdState _state = BirdState.Idle;
@@ -39,7 +36,7 @@ public class Bird : MonoBehaviour
     public bool IsAbilityActivated { get; private set; } 
     private void OnEnable()
     {
-        birdSprite.sprite = birdSO.birdImage;
+        birdSprite.sprite = birdSo.characterImage;
         BirdRigidbody2D = GetComponent<Rigidbody2D>();
         State = BirdState.Idle;
         IsAbilityActivated = false;

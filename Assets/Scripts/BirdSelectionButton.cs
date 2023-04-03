@@ -15,7 +15,7 @@ public class BirdSelectionButton : MonoBehaviour
     [SerializeField] private Image buttonBirdImage;
     [SerializeField] private Image frame;
     [SerializeField] private TextMeshProUGUI indexNumber;
-    [SerializeField] private BirdSO birdSO;
+    [SerializeField] private CharacterSO birdSo;
     [SerializeField] private SelectionDataSO gameSelectionData;
 
     private bool _isPressed;
@@ -58,8 +58,8 @@ public class BirdSelectionButton : MonoBehaviour
     {
         _isPressed = false;
         frame.gameObject.SetActive(false);
-        _index = birdSO.index;
-        GetComponent<Image>().sprite = birdSO.birdUIReference;
+        _index = birdSo.index;
+        GetComponent<Image>().sprite = birdSo.characterUIReference;
         gameSelectionData.OnSelectionChanged += UpdateFrameNumber;
     }
 

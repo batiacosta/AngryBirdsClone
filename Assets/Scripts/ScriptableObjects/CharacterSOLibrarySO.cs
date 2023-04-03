@@ -1,17 +1,18 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "BirdSOLibrarySO", menuName = "BirdSOLibrarySO", order = 0)]
-    public class BirdSOLibrarySO : ScriptableObject
+    [CreateAssetMenu(fileName = "CharacterSOLibrarySO", menuName = "CharacterSOLibrarySO", order = 0)]
+    public class CharacterSOLibrarySO : ScriptableObject
     {
         public List<BirdData> BirdsData;
         [Serializable]
         public class BirdData
         {
-            public BirdSO BirdSO;
+            public CharacterSO birdSo;
             public int Quantity;    //  This value could be set by fetching from user's data, coins, etc.
         }
     }

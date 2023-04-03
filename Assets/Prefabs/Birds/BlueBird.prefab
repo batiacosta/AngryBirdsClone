@@ -80,9 +80,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdSprite: {fileID: 4878469982779253697}
-  birdSO: {fileID: 11400000, guid: 6b6c401bb0e3b4c7386554ce1e75f549, type: 2}
+  birdSo: {fileID: 11400000, guid: 6b6c401bb0e3b4c7386554ce1e75f549, type: 2}
+  delayForDiying: 1
   speedFactor: 5
-  subBlueBirdSO: {fileID: 11400000, guid: bb4fb64322b3b4c9cb411553ce9ec79d, type: 2}
+  subBlueBirdSo: {fileID: 11400000, guid: bb4fb64322b3b4c9cb411553ce9ec79d, type: 2}
 --- !u!212 &4878469982779253697 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3033034415998950081, guid: aeb9ad199dc3a47e88a23254dc9a11a8, type: 3}

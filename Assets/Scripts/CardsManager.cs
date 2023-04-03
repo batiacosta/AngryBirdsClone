@@ -10,7 +10,7 @@ public class CardsManager : MonoBehaviour
 {
     [SerializeField] private List<InGameCard> cards;
     [SerializeField] private InGameDataSO inGameDataSO;
-    private List<BirdSOLibrarySO.BirdData> birdListSO;
+    private List<CharacterSOLibrarySO.BirdData> birdListSO;
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class CardsManager : MonoBehaviour
         inGameDataSO.OnBirdQuantityChange += UpdateQuantity;
     }
 
-    private void UpdateQuantity(object sender, List<BirdSOLibrarySO.BirdData> birdsData)
+    private void UpdateQuantity(object sender, List<CharacterSOLibrarySO.BirdData> birdsData)
     {
         for (int i = 0; i < cards.Count; i++)
         {
@@ -31,7 +31,7 @@ public class CardsManager : MonoBehaviour
     {
         for (int i = 0; i < cards.Count; i++)
         {
-            cards[i].SetInGameCard(birdListSO[i].BirdSO);
+            cards[i].SetInGameCard(birdListSO[i].birdSo);
             cards[i].UpdateQuantity(birdListSO[i].Quantity);
         }
     }

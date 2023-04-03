@@ -101,4 +101,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   birdSprite: {fileID: 763552116061089281}
-  birdSO: {fileID: 11400000, guid: bb4fb64322b3b4c9cb411553ce9ec79d, type: 2}
+  birdSo: {fileID: 11400000, guid: bb4fb64322b3b4c9cb411553ce9ec79d, type: 2}
+  delayForDiying: 1

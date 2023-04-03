@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: BlueBird
   m_EditorClassIdentifier: 
   index: 2
-  birdImage: {fileID: 21300000, guid: d0880c5bc75844779bac435c7d3a0483, type: 3}
-  birdUIReference: {fileID: 1641098938, guid: 4953520b51af44f0b99532bc491ddec2, type: 3}
+  characterImage: {fileID: 21300000, guid: d0880c5bc75844779bac435c7d3a0483, type: 3}
+  characterUIReference: {fileID: 1641098938, guid: 4953520b51af44f0b99532bc491ddec2, type: 3}
   prefab: {fileID: 6930695516054917, guid: d9c1dfb49baa04c9884e7080e4271d63, type: 3}
   type: Blue
+  InGameDataSo: {fileID: 11400000, guid: 265e3f1d1f5944a7eb18ca72f2e99d8b, type: 2}

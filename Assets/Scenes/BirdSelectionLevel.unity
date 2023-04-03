@@ -254,6 +254,10 @@ PrefabInstance:
       propertyPath: birdSO
       value: 
       objectReference: {fileID: 11400000, guid: 4c1c3e1d21619450ba5ccc9ea41bcfd4, type: 2}
+    - target: {fileID: 2834829448032835770, guid: e151c96ade47148958c997eb9b627872, type: 3}
+      propertyPath: birdSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c1c3e1d21619450ba5ccc9ea41bcfd4, type: 2}
     - target: {fileID: 2834829448032835772, guid: e151c96ade47148958c997eb9b627872, type: 3}
       propertyPath: m_Type
       value: 0
@@ -580,6 +584,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2834829448032835770, guid: e151c96ade47148958c997eb9b627872, type: 3}
       propertyPath: birdSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 4285edf571e4a4b8a9ac348fc63f881e, type: 2}
+    - target: {fileID: 2834829448032835770, guid: e151c96ade47148958c997eb9b627872, type: 3}
+      propertyPath: birdSo
       value: 
       objectReference: {fileID: 11400000, guid: 4285edf571e4a4b8a9ac348fc63f881e, type: 2}
     - target: {fileID: 2834829448032835772, guid: e151c96ade47148958c997eb9b627872, type: 3}
@@ -962,6 +970,10 @@ PrefabInstance:
       propertyPath: birdSO
       value: 
       objectReference: {fileID: 11400000, guid: 6b6c401bb0e3b4c7386554ce1e75f549, type: 2}
+    - target: {fileID: 2834829448032835770, guid: e151c96ade47148958c997eb9b627872, type: 3}
+      propertyPath: birdSo
+      value: 
+      objectReference: {fileID: 11400000, guid: bb4fb64322b3b4c9cb411553ce9ec79d, type: 2}
     - target: {fileID: 2834829448032835772, guid: e151c96ade47148958c997eb9b627872, type: 3}
       propertyPath: m_Type
       value: 0

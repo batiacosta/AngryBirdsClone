@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b14c7d00282474b66b2b29093ebeffd5, type: 3}
-  m_Name: RedBird
+  m_Name: EnemyGreenNormal
   m_EditorClassIdentifier: 
   index: 0
-  characterImage: {fileID: 21300000, guid: ad553d6d588154dfeaa5b5a338816af6, type: 3}
-  characterUIReference: {fileID: 141481910, guid: 4953520b51af44f0b99532bc491ddec2, type: 3}
-  prefab: {fileID: 1165044769080193303, guid: c37ab2c0e4048493da978c415ca95035, type: 3}
-  type: Red
+  characterImage: {fileID: 21300000, guid: 3a7a9573a4d904bd8937d18fbdc1141b, type: 3}
+  characterUIReference: {fileID: -2040147025, guid: 4953520b51af44f0b99532bc491ddec2, type: 3}
+  prefab: {fileID: 0}
+  type: Green Normal
   InGameDataSo: {fileID: 11400000, guid: 265e3f1d1f5944a7eb18ca72f2e99d8b, type: 2}
