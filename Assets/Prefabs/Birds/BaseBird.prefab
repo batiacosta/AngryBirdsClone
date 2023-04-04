@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e833d7eeb15043b9802499881a912ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfx: {fileID: 7728776553316294184}
   birdSprite: {fileID: 3033034415998950081}
-  birdSO: {fileID: 0}
+  birdSo: {fileID: 0}
   delayForDiying: 3

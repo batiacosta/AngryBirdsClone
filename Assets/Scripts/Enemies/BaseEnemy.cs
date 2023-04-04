@@ -1,8 +1,6 @@
 using System.Collections;
 using ScriptableObjects;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace Enemies
 {
@@ -28,6 +26,7 @@ namespace Enemies
     [SerializeField] private CharacterSO enemySo;
     [SerializeField] private float delayForDiying;
     [SerializeField] private InGameDataSO inGameDataSo;
+    [SerializeField] private Transform vfx;
 
     private EnemyState _state = EnemyState.Idle;
     public Rigidbody2D EnemyRigidbody2D { get; private set; } 
@@ -39,6 +38,7 @@ namespace Enemies
         State = EnemyState.Idle;
         GotHit = false;
         inGameDataSo.IncreaseEnemies();
+        vfx.gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -82,6 +82,7 @@ namespace Enemies
     {
         yield return new WaitForSeconds(1f);
         inGameDataSo.DecreaseEnemies();
+        vfx.gameObject.SetActive(true);
         Destroy(gameObject);
     }
     public virtual void SetIdle()

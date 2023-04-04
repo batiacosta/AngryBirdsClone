@@ -14,6 +14,7 @@ namespace Birds
 
         public override void SetActivated()
         {
+            ShowVFX();
             BirdRigidbody2D.AddForce(transform.right * Forcefactor, ForceMode2D.Impulse);
             State = BirdState.Hit;
         }

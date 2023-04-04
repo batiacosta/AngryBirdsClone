@@ -11,6 +11,7 @@ namespace Birds
         [SerializeField] private float forceFactor;
         public override void SetActivated()
         {
+            ShowVFX();
             var explosionCircleObjects = Physics2D.OverlapCircleAll(transform.position, explosionRadious);
             foreach (Collider2D afectedObject in explosionCircleObjects)
             {
