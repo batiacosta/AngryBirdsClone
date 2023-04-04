@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Enemies;
 using UnityEngine;
 using UnityEngine.Serialization;
 namespace ScriptableObjects
@@ -11,10 +12,12 @@ namespace ScriptableObjects
         
         [FormerlySerializedAs("birdSoLibrarySO")] [SerializeField] private CharacterSOLibrarySO characterSoLibrarySo;
         [SerializeField] private SelectionDataSO selectionDataSO;
-        
+        [SerializeField] private int hearts;
+
         public EventHandler<CharacterSO> OnCurrentBirdSOChanged;
         public EventHandler<List<CharacterSOLibrarySO.BirdData>> OnBirdQuantityChange;
         public EventHandler<int> OnEnemyQuantityChanged;
+        public EventHandler<int> OnHeartsChanged;
 
         public CharacterSO CurrentCharacterSo
         {
@@ -22,8 +25,8 @@ namespace ScriptableObjects
         }
 
         private CharacterSO _currentCharacterSo;
-        private List<CharacterSOLibrarySO.BirdData> _selectedBirdsData = new List<CharacterSOLibrarySO.BirdData>();
-        private int _remainingEnemies = 0;
+        private List<CharacterSOLibrarySO.BirdData> _selectedBirdsData;
+        private int _remainingEnemies;
         public void SetNewBird(CharacterSO birdSo)
         {
             _currentCharacterSo = birdSo;
@@ -32,7 +35,6 @@ namespace ScriptableObjects
         
         public List<CharacterSOLibrarySO.BirdData> GetBirdSOList()
         {
-            _selectedBirdsData.Clear();
             var indexes = selectionDataSO.GetIndexesList();
             foreach (var index in indexes)
             {
@@ -63,13 +65,36 @@ namespace ScriptableObjects
         public void DecreaseEnemies()
         {
             _remainingEnemies--;
+            Debug.Log($"Quedan solo {_remainingEnemies}");
             OnEnemyQuantityChanged?.Invoke(this, _remainingEnemies);
         }
 
-        public void IncreaseEnemies()
+        public int GetEnemies()
         {
-            _remainingEnemies++;
-            OnEnemyQuantityChanged?.Invoke(this, _remainingEnemies);
+            return _remainingEnemies;
+        }
+
+        public void SetRemainingEnemies(int enemies)
+        {
+            _remainingEnemies = enemies;
+        }
+        
+
+        public void SetHearts(int heartsValue)
+        {
+            hearts = heartsValue;
+            OnHeartsChanged?.Invoke(this, hearts);
+        }
+
+        public int GetHearts()
+        {
+            return hearts;
+        }
+
+        public void InitializeInGameData()
+        {
+            _remainingEnemies = 0;
+            _selectedBirdsData.Clear();
         }
     }
 }

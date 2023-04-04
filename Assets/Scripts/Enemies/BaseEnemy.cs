@@ -37,7 +37,6 @@ namespace Enemies
         EnemyRigidbody2D = GetComponent<Rigidbody2D>();
         State = EnemyState.Idle;
         GotHit = false;
-        inGameDataSo.IncreaseEnemies();
         vfx.gameObject.SetActive(false);
     }
 
@@ -80,9 +79,9 @@ namespace Enemies
 
     private IEnumerator DelayForDestruction()
     {
+        vfx.gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
         inGameDataSo.DecreaseEnemies();
-        vfx.gameObject.SetActive(true);
         Destroy(gameObject);
     }
     public virtual void SetIdle()
