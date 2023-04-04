@@ -15,3 +15,4 @@ If player destroys all the enemies with one bird, it gets recovered.
 ## Changes
 
 - Renaming of Scriptable Objects to CharacterSO from BirdSO, due to the inclusion of the type Enemy that contains similar data.
+- Addition of particle effects to birds when special ability is activated, and the enemy before gets destroyed.
