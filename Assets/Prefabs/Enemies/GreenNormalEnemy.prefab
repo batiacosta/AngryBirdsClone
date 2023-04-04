@@ -104,6 +104,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenNormalEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7619194807433796738, guid: 581c56e0ce6b1438ea104ac5361bd597, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7619194807433796739, guid: 581c56e0ce6b1438ea104ac5361bd597, type: 3}
       propertyPath: m_Radius
       value: 4
