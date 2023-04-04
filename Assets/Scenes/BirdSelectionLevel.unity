@@ -865,7 +865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSelectionData: {fileID: 11400000, guid: 0e225a12bb49e4aab8d65b0c0ad56fcd, type: 2}
-  playButton: {fileID: 1472770597}
+  playButton: {fileID: 1472770596}
 --- !u!224 &1001198939 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2834829448032835769, guid: e151c96ade47148958c997eb9b627872, type: 3}

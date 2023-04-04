@@ -105,7 +105,7 @@ public class Bird : MonoBehaviour
         StartCoroutine(DelayForDestruction());
     }
 
-    private IEnumerator DelayForDestruction()
+    public IEnumerator DelayForDestruction()
     {
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);

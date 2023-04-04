@@ -3,15 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using ScriptableObjects;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class Pivot : MonoBehaviour
 {
     [SerializeField] private Bird currentBird;
     [SerializeField] private float factor;
-    [SerializeField] private InGameDataSO inGameDataSO;
+    [SerializeField] private InGameDataSO inGameDataSo;
     [SerializeField] private Transform placeToSpawn;
     [SerializeField] private Transform[] trajectoryDots;
     [SerializeField] private Transform dot;
@@ -25,20 +27,26 @@ public class Pivot : MonoBehaviour
     private Vector3 _worldFingerPosition;
     Vector3 _initialPosition;
     Vector3 _direction;
+    private CharacterSO _currentBirSo;
     
     private void Start()
     {
         _mainCamera = Camera.main;
-        inGameDataSO.OnCurrentBirdSOChanged += SetNewBirdFromEvent;
-        if (inGameDataSO.CurrentCharacterSo != null)
+        inGameDataSo.OnCurrentBirdSOChanged += SetNewBirdFromEvent;
+        if (inGameDataSo.CurrentCharacterSo != null)
         {
-            SetNewCurrentBird(inGameDataSO.CurrentCharacterSo);
+            SetNewCurrentBird(inGameDataSo.CurrentCharacterSo);
         }
 
         _initialPosition = transform.position;
         _trajectory = GetComponent<Trajectory>();
     }
-    
+
+    private void OnDestroy()
+    {
+        inGameDataSo.OnCurrentBirdSOChanged -= SetNewBirdFromEvent;
+    }
+
     private void SetNewBirdFromEvent(object sender, CharacterSO e)
     {
         SetNewCurrentBird(e);
@@ -58,6 +66,7 @@ public class Pivot : MonoBehaviour
         birdPrefab.SetPositionAndRotation(placeToSpawn.transform.position, Quaternion.identity );
         birdPrefab.transform.localScale *= 0.05f;
         currentBird = birdPrefab.GetComponent<Bird>();
+        _currentBirSo = birdSo;
         _birdRigidBody2D = currentBird.GetComponent<Rigidbody2D>();
         
     }
@@ -111,7 +120,12 @@ public class Pivot : MonoBehaviour
         _trajectory.Hide();
         currentBird.State = Bird.BirdState.Released;
         currentBird = null;
+        StartCoroutine(DelayNewBird());
     }
 
-    
+    private IEnumerator DelayNewBird()
+    {
+        yield return new WaitForSeconds(2.5f);
+        inGameDataSo.SetBirdQuantityInGame(_currentBirSo,false);
+    }
 }

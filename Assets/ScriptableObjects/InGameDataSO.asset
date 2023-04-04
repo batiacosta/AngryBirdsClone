@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e11e11b74247f79f89c4d400fdfa64, type: 3}
   m_Name: InGameDataSO
   m_EditorClassIdentifier: 
-  characterSoLibrarySo: {fileID: 11400000, guid: fac2411d852a9405585b489068023b18, type: 2}
+  characterSoLibrarySo: {fileID: 11400000, guid: 01085fb7edb884f9c9bf798c43947f57, type: 2}
   selectionDataSO: {fileID: 11400000, guid: 0e225a12bb49e4aab8d65b0c0ad56fcd, type: 2}
   hearts: 3

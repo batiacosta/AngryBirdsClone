@@ -25,8 +25,9 @@ namespace Birds
                         afectedObjectRigidbody2D.AddForce(distance.normalized * explosionForceMagnitud);
                     }
                 }
-                
             }
+
+            StartCoroutine(DelayForDestruction());
         }
 
         private void OnDrawGizmos()

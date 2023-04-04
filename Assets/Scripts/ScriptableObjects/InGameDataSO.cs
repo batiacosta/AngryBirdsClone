@@ -46,26 +46,42 @@ namespace ScriptableObjects
             return _selectedBirdsData;
         }
 
-        public void SetBirdQuantityInGame(int index, bool isAdditive)
+        public void SetBirdQuantityInGame(CharacterSO birdSo, bool isAdditive)
         {
+            int index = GetIndexFromSelectedBirds(birdSo);
             var libraryIndex = _selectedBirdsData[index].birdSo.index;
             if (isAdditive)
             {
-                _selectedBirdsData[index].Quantity++;
                 characterSoLibrarySo.BirdsData[libraryIndex].Quantity++;
             }
             else
             {
-                _selectedBirdsData[index].Quantity--;
-                characterSoLibrarySo.BirdsData[libraryIndex].Quantity--;
+                if (_selectedBirdsData[index].Quantity > 0)
+                {
+                    characterSoLibrarySo.BirdsData[libraryIndex].Quantity--;
+                }
             }
             OnBirdQuantityChange?.Invoke(this, _selectedBirdsData);
+        }
+
+        private int GetIndexFromSelectedBirds(CharacterSO birdSo)
+        {
+            Debug.Log(birdSo.type);
+            for (int i = 0; i < _selectedBirdsData.Count; i++)
+            {
+                if (_selectedBirdsData[i].birdSo.type == birdSo.type)
+                {
+                    return i;
+                }
+            }
+
+            return _selectedBirdsData.Count + 1;
         }
 
         public void DecreaseEnemies()
         {
             _remainingEnemies--;
-            Debug.Log($"Quedan solo {_remainingEnemies}");
+
             OnEnemyQuantityChanged?.Invoke(this, _remainingEnemies);
         }
 
@@ -82,7 +98,14 @@ namespace ScriptableObjects
 
         public void SetHearts(int heartsValue)
         {
-            hearts = heartsValue;
+            if (heartsValue <= 0)
+            {
+                hearts = 0;
+            }
+            else
+            {
+                hearts = heartsValue;
+            }
             OnHeartsChanged?.Invoke(this, hearts);
         }
 
@@ -95,6 +118,15 @@ namespace ScriptableObjects
         {
             _remainingEnemies = 0;
             _selectedBirdsData.Clear();
+        }
+
+        public void RefillBirds()
+        {
+            for (int i = 0; i < characterSoLibrarySo.BirdsData.Count; i++)
+            {
+                characterSoLibrarySo.BirdsData[i].Quantity += 2;
+            }
+            OnBirdQuantityChange?.Invoke(this, _selectedBirdsData);
         }
     }
 }
