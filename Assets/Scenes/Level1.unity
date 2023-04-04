@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &142963049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 142963050}
+  m_Layer: 0
+  m_Name: TrajectoryParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &142963050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142963049}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1844080648}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &156139939 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6866490683599947151, guid: f249fb8c88e2f4d35ab98690ab692a6e, type: 3}
@@ -1247,6 +1278,7 @@ GameObject:
   - component: {fileID: 1844080648}
   - component: {fileID: 1844080647}
   - component: {fileID: 1844080649}
+  - component: {fileID: 1844080650}
   m_Layer: 0
   m_Name: Pivot
   m_TagString: Untagged
@@ -1319,6 +1351,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1605306030}
+  - {fileID: 142963050}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1338,6 +1371,27 @@ MonoBehaviour:
   factor: 5
   inGameDataSO: {fileID: 11400000, guid: 265e3f1d1f5944a7eb18ca72f2e99d8b, type: 2}
   placeToSpawn: {fileID: 1605306030}
+  trajectoryDots: []
+  dot: {fileID: 2378361869510992966, guid: 31b8ec6a461c34f3387e1bd5103cad55, type: 3}
+  dotsNumber: 10
+--- !u!114 &1844080650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844080645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1abe385959a4785b77fa341aedaa06a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dotsNumber: 10
+  dotsParent: {fileID: 142963050}
+  dotPrefab: {fileID: 2378361869510992966, guid: 31b8ec6a461c34f3387e1bd5103cad55, type: 3}
+  dotSpacing: 0.03
+  dotMinScale: 0.191
+  dotMaxScale: 1
 --- !u!1001 &6866490683722531884
 PrefabInstance:
   m_ObjectHideFlags: 0
