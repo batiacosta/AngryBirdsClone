@@ -1,13 +1,10 @@
+
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using ScriptableObjects;
 using TMPro;
-using UnityEditor.XR;
+
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UIElements;
+
 using Image = UnityEngine.UI.Image;
 
 public class BirdSelectionButton : MonoBehaviour
@@ -71,5 +68,9 @@ public class BirdSelectionButton : MonoBehaviour
             indexNumber.text = (_indexNumberFrame).ToString();
         }
     }
-    
+
+    private void OnDestroy()
+    {
+        gameSelectionData.OnSelectionChanged -= UpdateFrameNumber;
+    }
 }

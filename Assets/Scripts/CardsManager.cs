@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +18,11 @@ public class CardsManager : MonoBehaviour
         birdListSO = inGameDataSO.GetBirdSOList();
         SetCardsVisuals();
         inGameDataSO.OnBirdQuantityChange += UpdateQuantity;
+    }
+
+    private void OnDestroy()
+    {
+        inGameDataSO.OnBirdQuantityChange -= UpdateQuantity;
     }
 
     private void UpdateQuantity(object sender, List<CharacterSOLibrarySO.BirdData> birdsData)
