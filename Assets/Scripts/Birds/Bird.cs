@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class Bird : MonoBehaviour
 {
+    public Transform vfx;
     public enum BirdState
     {
         Idle,
@@ -30,6 +31,7 @@ public class Bird : MonoBehaviour
     [SerializeField] private SpriteRenderer birdSprite;
     [SerializeField] private CharacterSO birdSo;
     [SerializeField] private float delayForDiying;
+    
 
     private BirdState _state = BirdState.Idle;
     public Rigidbody2D BirdRigidbody2D { get; private set; } 
@@ -40,6 +42,7 @@ public class Bird : MonoBehaviour
         BirdRigidbody2D = GetComponent<Rigidbody2D>();
         State = BirdState.Idle;
         IsAbilityActivated = false;
+        vfx.gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -136,6 +139,11 @@ public class Bird : MonoBehaviour
     {
         //  Play animations for idle
         //  Play animations for idle
+    }
+
+    public void ShowVFX()
+    {
+        vfx.gameObject.SetActive(true);
     }
     
 

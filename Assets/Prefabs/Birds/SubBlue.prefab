@@ -100,6 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c81986309f0b438eac494fedaf67767f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfx: {fileID: 5462038907396713192}
   birdSprite: {fileID: 763552116061089281}
   birdSo: {fileID: 11400000, guid: bb4fb64322b3b4c9cb411553ce9ec79d, type: 2}
   delayForDiying: 1
+--- !u!4 &5462038907396713192 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7728776553316294184, guid: aeb9ad199dc3a47e88a23254dc9a11a8, type: 3}
+  m_PrefabInstance: {fileID: 2346144654052259008}
+  m_PrefabAsset: {fileID: 0}

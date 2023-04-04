@@ -12,6 +12,7 @@ namespace Birds
         [SerializeField] private CharacterSO subBlueBirdSo;
         public override void SetActivated()
         {
+            ShowVFX();
             var currentVelocity = GetComponent<Rigidbody2D>().velocity;
             var sub1 = Instantiate(subBlueBirdSo.prefab, transform.position, Quaternion.identity);
             sub1.GetComponent<SubBlue>().InitialSetUp(new Vector2(currentVelocity.x, currentVelocity.y+speedFactor));
