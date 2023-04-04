@@ -32,6 +32,7 @@ namespace ScriptableObjects
         
         public List<CharacterSOLibrarySO.BirdData> GetBirdSOList()
         {
+            _selectedBirdsData.Clear();
             var indexes = selectionDataSO.GetIndexesList();
             foreach (var index in indexes)
             {
