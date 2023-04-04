@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -12,11 +13,18 @@ public class Pivot : MonoBehaviour
     [SerializeField] private float factor;
     [SerializeField] private InGameDataSO inGameDataSO;
     [SerializeField] private Transform placeToSpawn;
+    [SerializeField] private Transform[] trajectoryDots;
+    [SerializeField] private Transform dot;
+    [SerializeField] private int dotsNumber;
     
     private Rigidbody2D _birdRigidBody2D;
+    private Trajectory _trajectory;
     private Camera _mainCamera;
     private bool _isDragging;
-    private Vector3 _initial;
+    private Vector2 _touchPosition;
+    private Vector3 _worldFingerPosition;
+    Vector3 _initialPosition;
+    Vector3 _direction;
     
     private void Start()
     {
@@ -26,11 +34,13 @@ public class Pivot : MonoBehaviour
         {
             SetNewCurrentBird(inGameDataSO.CurrentCharacterSo);
         }
-    }
 
+        _initialPosition = transform.position;
+        _trajectory = GetComponent<Trajectory>();
+    }
+    
     private void SetNewBirdFromEvent(object sender, CharacterSO e)
     {
-        Debug.Log("Se invocó desde el botón e inGameData");
         SetNewCurrentBird(e);
     }
 
@@ -78,25 +88,27 @@ public class Pivot : MonoBehaviour
         if (!EventSystem.current.IsPointerOverGameObject())
         {
             _isDragging = true;
-            Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
-            Vector3 worldFingerPosition = _mainCamera.ScreenToWorldPoint(touchPosition);
+            _touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+            _worldFingerPosition = _mainCamera.ScreenToWorldPoint(_touchPosition);
             currentBird.State = Bird.BirdState.Pressed;
-            _birdRigidBody2D.position = worldFingerPosition;
+            _birdRigidBody2D.position = _worldFingerPosition;
+            _trajectory.UpdateDotsPosition(transform.position, ((_initialPosition- _worldFingerPosition)*factor));
         }
-
     }
 
     private void ShootBird()
     {
         currentBird.State = Bird.BirdState.Shooting;
-        Vector3 initialPosition = transform.position;
+
         Vector3 finalPosition = _birdRigidBody2D.position;
-        Vector3 direction = initialPosition - finalPosition;
-        _birdRigidBody2D.velocity = new Vector2(direction.x, direction.y) * factor;
+        
+        _direction = _initialPosition - finalPosition;
+        _birdRigidBody2D.velocity = new Vector2(_direction.x, _direction.y) * factor;
         ReleaseBird();
     }
     private void ReleaseBird()
     {
+        _trajectory.Hide();
         currentBird.State = Bird.BirdState.Released;
         currentBird = null;
     }
