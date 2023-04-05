@@ -17,3 +17,4 @@ If player destroys all the enemies with one bird, it gets recovered.
 - Renaming of Scriptable Objects to CharacterSO from BirdSO, due to the inclusion of the type Enemy that contains similar data.
 - Addition of particle effects to birds when special ability is activated, and the enemy before gets destroyed.
 - Unity Editor maintains data on ScriptableObjects, so to fix a bug, a list is cleared on runtime. The bug appears only on Unity Editor
+- There was a bug related to the overlaping of panels at the end of the match. It got fixed by excluding the statements in LevelManager.cs
