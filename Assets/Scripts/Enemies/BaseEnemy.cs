@@ -80,7 +80,7 @@ namespace Enemies
     private IEnumerator DelayForDestruction()
     {
         vfx.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(delayForDiying);
         inGameDataSo.DecreaseEnemies();
         Destroy(gameObject);
     }

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSoLibrarySo: {fileID: 11400000, guid: 01085fb7edb884f9c9bf798c43947f57, type: 2}
   selectionDataSO: {fileID: 11400000, guid: 0e225a12bb49e4aab8d65b0c0ad56fcd, type: 2}
-  hearts: 2
+  hearts: 1

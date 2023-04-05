@@ -1,8 +1,5 @@
-using System;
 using ScriptableObjects;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
-using UnityEngine.Serialization;
 
 namespace Birds
 {

@@ -1,9 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using ScriptableObjects;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class SelectionSceneManager : MonoBehaviour
 {
