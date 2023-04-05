@@ -1,13 +1,10 @@
-using System;
+
 using System.Collections;
-using System.Collections.Generic;
 using DefaultNamespace;
 using ScriptableObjects;
-using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 public class Pivot : MonoBehaviour
 {
@@ -15,10 +12,7 @@ public class Pivot : MonoBehaviour
     [SerializeField] private float factor;
     [SerializeField] private InGameDataSO inGameDataSo;
     [SerializeField] private Transform placeToSpawn;
-    [SerializeField] private Transform[] trajectoryDots;
-    [SerializeField] private Transform dot;
-    [SerializeField] private int dotsNumber;
-    
+
     private Rigidbody2D _birdRigidBody2D;
     private Trajectory _trajectory;
     private Camera _mainCamera;

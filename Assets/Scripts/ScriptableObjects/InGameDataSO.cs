@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using Enemies;
 using UnityEngine;
 using UnityEngine.Serialization;
 namespace ScriptableObjects
@@ -66,7 +64,6 @@ namespace ScriptableObjects
 
         private int GetIndexFromSelectedBirds(CharacterSO birdSo)
         {
-            Debug.Log(birdSo.type);
             for (int i = 0; i < _selectedBirdsData.Count; i++)
             {
                 if (_selectedBirdsData[i].birdSo.type == birdSo.type)
@@ -83,11 +80,6 @@ namespace ScriptableObjects
             _remainingEnemies--;
 
             OnEnemyQuantityChanged?.Invoke(this, _remainingEnemies);
-        }
-
-        public int GetEnemies()
-        {
-            return _remainingEnemies;
         }
 
         public void SetRemainingEnemies(int enemies)

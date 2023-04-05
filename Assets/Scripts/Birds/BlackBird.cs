@@ -1,7 +1,5 @@
 
-using System;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 namespace Birds
 {
@@ -29,7 +27,6 @@ namespace Birds
 
             StartCoroutine(DelayForDestruction());
         }
-
         private void OnDrawGizmos()
         {
             Gizmos.DrawWireSphere(transform.position , explosionRadious);

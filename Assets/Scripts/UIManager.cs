@@ -1,5 +1,4 @@
-using System;
-using System.Collections;
+
 using System.Collections.Generic;
 using ScriptableObjects;
 using TMPro;
@@ -50,12 +49,6 @@ public class UIManager : MonoBehaviour
     {
         levelManager.UseHeart();
     }
-
-    public void Back()
-    {
-        
-    }
-
     public void DisableHeartButton()
     {
         useHeartButton.enabled = false;

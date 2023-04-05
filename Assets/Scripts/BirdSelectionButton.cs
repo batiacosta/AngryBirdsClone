@@ -1,5 +1,4 @@
 
-using System;
 using ScriptableObjects;
 using TMPro;
 
@@ -9,7 +8,6 @@ using Image = UnityEngine.UI.Image;
 
 public class BirdSelectionButton : MonoBehaviour
 {
-    [SerializeField] private Image buttonBirdImage;
     [SerializeField] private Image frame;
     [SerializeField] private TextMeshProUGUI indexNumber;
     [SerializeField] private CharacterSO birdSo;
