@@ -136,6 +136,7 @@ public class LevelManager : MonoBehaviour
         if (_remainingEnemies == 0)
         {
             uiManager.ShowWinPanel();
+            return;
         }
 
         if (_birds == 0)
