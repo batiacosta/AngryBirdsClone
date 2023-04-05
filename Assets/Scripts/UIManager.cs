@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private InGameDataSO inGameDataSo;
     [SerializeField] private Button useHeartButton;
     [SerializeField] private TextMeshProUGUI heartCounter;
+    [SerializeField] private TextMeshProUGUI finalScoreTMP;
 
     private void Start()
     {
@@ -31,6 +32,7 @@ public class UIManager : MonoBehaviour
     {
         HideFinalPanels();
         finalPanels[0].gameObject.SetActive(true);
+        finalScoreTMP.text = levelManager.GetScore().ToString();
     }
 
     public void ShowLosePanel()

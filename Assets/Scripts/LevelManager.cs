@@ -147,4 +147,9 @@ public class LevelManager : MonoBehaviour
         inGameDataSo.RefillBirds();
         State = GameState.Running;
     }
+
+    public int GetScore()
+    {
+        return _score;
+    }
 }
