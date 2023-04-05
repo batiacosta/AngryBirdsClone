@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BirdsData:
   - birdSo: {fileID: 11400000, guid: 4285edf571e4a4b8a9ac348fc63f881e, type: 2}
-    Quantity: 0
+    Quantity: 2
   - birdSo: {fileID: 11400000, guid: 4c1c3e1d21619450ba5ccc9ea41bcfd4, type: 2}
-    Quantity: 0
+    Quantity: 2
   - birdSo: {fileID: 11400000, guid: 6b6c401bb0e3b4c7386554ce1e75f549, type: 2}
-    Quantity: 4
+    Quantity: 2
