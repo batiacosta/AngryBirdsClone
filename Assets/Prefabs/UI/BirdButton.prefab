@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2834829448032835772}
   - component: {fileID: 2834829448032835771}
   - component: {fileID: 2834829448032835770}
+  - component: {fileID: 7983199964380368157}
   m_Layer: 5
   m_Name: BirdButton
   m_TagString: Untagged
@@ -150,8 +151,29 @@ MonoBehaviour:
   buttonBirdImage: {fileID: 2834829448032835772}
   frame: {fileID: 2834829449338743791}
   indexNumber: {fileID: 2834829448892211752}
-  birdSO: {fileID: 0}
+  birdSo: {fileID: 0}
   gameSelectionData: {fileID: 11400000, guid: 0e225a12bb49e4aab8d65b0c0ad56fcd, type: 2}
+--- !u!95 &7983199964380368157
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2834829448032835768}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 405c3768fb143473297a761c76c8c9eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2834829448892211750
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,8 @@ public class BirdSelectionButton : MonoBehaviour
     private bool _canBeSelected;
     private int _index;
     private int _indexNumberFrame = 0;
+    private Animator _animator;
+    private static readonly int IsSelected = Animator.StringToHash("IsSelected");
 
     public void SelectBird()
     {
@@ -40,6 +42,7 @@ public class BirdSelectionButton : MonoBehaviour
             gameSelectionData.RemoveSelectedBird(_index);
             _isPressed = false;
         }
+        _animator.SetBool(IsSelected, _isPressed);
     }
     
     private void Start()
@@ -53,11 +56,13 @@ public class BirdSelectionButton : MonoBehaviour
     }
     private void InitializeButton()
     {
+        _animator = GetComponent<Animator>();
         _isPressed = false;
         frame.gameObject.SetActive(false);
         _index = birdSo.index;
         GetComponent<Image>().sprite = birdSo.characterUIReference;
         gameSelectionData.OnSelectionChanged += UpdateFrameNumber;
+
     }
 
     private void UpdateFrameNumber(object sender, bool isFilled)
